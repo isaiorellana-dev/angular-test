@@ -1,9 +1,13 @@
 main {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  button {
+    border-radius: 6px;
+  }
   .add-container {
-    margin-top: 25px;
+    margin: 25px 0 25px;
     padding: 15px;
     border: 1px solid hsl(0, 0%, 80%);
     border-radius: 6px;
@@ -16,5 +20,16 @@ main {
         min-height: 80px;
       }
     }
+  }
+  .post-created {
+    width: 100%;
+    max-width: 300px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    margin-bottom: 5px;
+    border: 1px solid #6666;
+    padding: 10px;
   }
 }

@@ -1,15 +1,43 @@
 <app-header></app-header>
 <main>
+  <div *ngIf="postCreated.title.length > 1" class="post-created">
+    <h3>Post Creado con Éxito</h3>
+    <h4>{{ postCreated.title }}</h4>
+    <p>{{ postCreated.body }}</p>
+  </div>
+
   <div class="add-container">
     <h2>Agregar un nuevo Post</h2>
+
     <div>
       <label for="title">Titulo:</label>
-      <input type="text" name="title" />
+      <input
+        required
+        type="text"
+        name="title"
+        [(ngModel)]="newPostForm.title"
+        #title="ngModel"
+      />
     </div>
     <div>
       <label for="body">Contenido:</label>
-      <textarea type="text" class="add-contenido" name="body"></textarea>
+      <textarea
+        required
+        type="text"
+        class="add-contenido"
+        name="body"
+        [(ngModel)]="newPostForm.body"
+        #body="ngModel"
+      ></textarea
+      ><small
+        *ngIf="!formValidate() && body.touched && title.touched"
+        class="bg-danger text-light mt-1 mb-3 px-2 py-1 rounded"
+        >El titulo y el contenido tienen que tener por lo menos 3
+        caracteres</small
+      >
     </div>
-    <button>Enviar</button>
+
+    <button [disabled]="!formValidate()" (click)="createPost()">Enviar</button>
   </div>
+  <button (click)="goHome()">Regresar al Inicio</button>
 </main>
