@@ -1,0 +1,14 @@
+<app-header></app-header>
+<main>
+  <h3>Data</h3>
+
+  <div class="data-container">
+    <div *ngFor="let post of posts" class="data-post">
+      <h3 class="post-id">{{ post.id }}</h3>
+      <h4 class="post-title">{{ post.title }}</h4>
+      <p class="post-body">{{ post.body }}</p>
+      <button>Eliminar</button>
+    </div>
+    <button class="new-post" (click)="newPost()">Nuevo Post</button>
+  </div>
+</main>

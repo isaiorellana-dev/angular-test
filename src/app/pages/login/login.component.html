@@ -1,0 +1,35 @@
+<main class="login-main">
+  <div class="login-modal">
+    <div>
+      <label for="email" class="">Correo</label>
+      <input
+        type="email"
+        name="email"
+        #email="ngModel"
+        [(ngModel)]="loginForm.email.val"
+      />
+    </div>
+    <small
+      *ngIf="!loginForm.email.isValid() && email.touched"
+      class="bg-danger text-light mt-1 px-2 py-1 rounded"
+      >{{ loginForm.email.error }}</small
+    >
+    <div class="">
+      <label for="password">Contraseña</label>
+      <input
+        type="password"
+        name="password"
+        [(ngModel)]="loginForm.password.val"
+        #password="ngModel"
+      />
+    </div>
+    <small
+      *ngIf="!loginForm.password.isValid() && password.touched"
+      class="bg-danger text-light mt-1 mb-3 px-2 py-1 rounded"
+      >{{ loginForm.password.error }}</small
+    >
+    <button [disabled]="!isValidForm()" (click)="login()">
+      Iniciar Sesión
+    </button>
+  </div>
+</main>
