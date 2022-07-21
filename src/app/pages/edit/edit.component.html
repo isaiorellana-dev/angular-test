@@ -1,1 +1,37 @@
-<p>edit works!</p>
+<app-header></app-header>
+<main>
+  <div *ngIf="!edited" class="edit-container">
+    <h1>Editar post</h1>
+    <h2>{{ post.id }}</h2>
+    <label>Titulo:</label>
+    <input
+      type="text"
+      [value]="post.title"
+      [(ngModel)]="post.title"
+      #title="ngModel"
+    />
+    <label>Contenido:</label>
+    <textarea
+      type="text"
+      [value]="post.body"
+      [(ngModel)]="post.body"
+      #body="ngModel"
+    ></textarea>
+    <small
+      *ngIf="!formValidate() && body.touched && title.touched"
+      class="bg-danger text-light mt-1 mb-3 px-2 py-1 rounded"
+      >El titulo y el contenido tienen que tener por lo menos 3
+      caracteres</small
+    >
+    <button [disabled]="!formValidate()" (click)="savePostEdited()">
+      Guardar
+    </button>
+  </div>
+
+  <div *ngIf="postEdited.title.length > 1" class="post-edited">
+    <h3>Post editado con éxito</h3>
+    <h4>{{ postEdited.title }}</h4>
+    <p>{{ postEdited.body }}</p>
+  </div>
+  <button (click)="goHome()">Regresar al Inicio</button>
+</main>

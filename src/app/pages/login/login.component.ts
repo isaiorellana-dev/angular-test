@@ -48,6 +48,8 @@ export class LoginComponent {
     password: '12345678',
   };
 
+  authError: boolean = false;
+
   login() {
     if (
       this.loginForm.email.val === this.userDefault.email &&
@@ -56,7 +58,7 @@ export class LoginComponent {
       localStorage.setItem('user', JSON.stringify(this.loginForm.email.val));
       this.router.navigate(['/']);
     } else {
-      console.log('login fallo');
+      this.authError = true;
     }
   }
 }

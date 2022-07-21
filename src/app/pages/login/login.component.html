@@ -28,6 +28,11 @@
       class="bg-danger text-light mt-1 mb-3 px-2 py-1 rounded"
       >{{ loginForm.password.error }}</small
     >
+    <small
+      *ngIf="authError"
+      class="bg-danger text-light mt-1 mb-3 px-2 py-1 rounded"
+      >Correo o contraseña incorrectos.</small
+    >
     <button [disabled]="!isValidForm()" (click)="login()">
       Iniciar Sesión
     </button>

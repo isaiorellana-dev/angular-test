@@ -1,0 +1,40 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  button {
+    border-radius: 6px;
+  }
+  .edit-container {
+    width: 100%;
+    max-width: 350px;
+    margin: 25px 0 25px;
+    padding: 15px;
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    input {
+      width: 100%;
+      margin: 10px;
+    }
+    textarea {
+      width: 100%;
+      margin: 10px;
+      min-height: 80px;
+    }
+  }
+  .post-edited {
+    width: 100%;
+    max-width: 300px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    margin-bottom: 5px;
+    border: 1px solid #6666;
+    padding: 10px;
+  }
+}
