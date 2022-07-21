@@ -24,6 +24,7 @@ header {
   }
 }
 main {
+  position: relative;
   padding: 10px;
   h3 {
     text-align: center;
@@ -54,12 +55,47 @@ main {
       padding: 10px;
       .post-id {
         color: rgb(0, 163, 192);
+        font-size: 20px;
+        border: none;
+        text-decoration: underline;
+        background-color: transparent;
       }
       .post-body {
         color: #666666;
       }
       button {
         margin: 8px;
+        border-radius: 6px;
+        border-color: red;
+      }
+    }
+  }
+  .modal-container {
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #000000;
+    background-color: #00000044;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .modal-content {
+      width: 100%;
+      max-width: 300px;
+      padding: 10xpx;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 6px;
+      background-color: rgb(206, 206, 206);
+      button {
+        margin: 10px;
+        border-radius: 6px;
+        border-color: #666666;
       }
     }
   }

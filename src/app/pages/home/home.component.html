@@ -7,7 +7,14 @@
       <button (click)="edit(post.id)" class="post-id">{{ post.id }}</button>
       <h4 class="post-title">{{ post.title }}</h4>
       <p class="post-body">{{ post.body }}</p>
-      <button>Eliminar</button>
+      <button (click)="openModal(post)">Eliminar</button>
+      <div class="modal-container" *ngIf="post.modal">
+        <div class="modal-content">
+          <p>Seguro que quieres borrar este post?</p>
+          <button (click)="deletePost(post)">Si, estoy seguro</button>
+          <button (click)="closeModal(post)">No, cancelar</button>
+        </div>
+      </div>
     </div>
     <button class="new-post" (click)="newPost()">Nuevo Post</button>
   </div>

@@ -20,6 +20,7 @@ export class AddComponent implements OnInit {
     title: '',
     body: '',
   };
+  edited: boolean = false;
 
   constructor(private router: Router, private postsService: PostsService) {
     this.newPostForm = {
@@ -42,6 +43,7 @@ export class AddComponent implements OnInit {
         this.data = d;
         let newItem = JSON.parse(this.data.body);
         this.postCreated = newItem;
+        this.edited = true;
         this.newPostForm = {
           title: '',
           body: '',

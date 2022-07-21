@@ -29,6 +29,20 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['edit/' + id]);
   }
 
+  openModal(post: any) {
+    post.modal = true;
+  }
+  closeModal(post: any) {
+    post.modal = false;
+  }
+
+  deletePost(post: any) {
+    return this.postsService.deletePost(post.id).subscribe(() => {
+      let index = this.posts.indexOf(post, 0);
+      this.posts.splice(index, 1);
+    });
+  }
+
   newPost() {
     this.router.navigate(['add']);
   }

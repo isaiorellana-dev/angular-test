@@ -6,7 +6,7 @@
     <p>{{ postCreated.body }}</p>
   </div>
 
-  <div class="add-container">
+  <div *ngIf="!edited" class="add-container">
     <h2>Agregar un nuevo Post</h2>
 
     <div>

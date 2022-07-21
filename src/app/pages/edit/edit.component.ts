@@ -1,4 +1,3 @@
-import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PostsService } from 'src/app/services/posts/posts.service';
@@ -14,7 +13,7 @@ export class EditComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private postsService: PostsService // private location: Location
+    private postsService: PostsService
   ) {}
   postId: string | null = null;
   post: Posts = {

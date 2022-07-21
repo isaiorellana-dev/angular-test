@@ -49,4 +49,8 @@ export class PostsService {
       },
     });
   }
+
+  deletePost(id: number) {
+    return this.http.delete('https://jsonplaceholder.typicode.com/posts/' + id);
+  }
 }
